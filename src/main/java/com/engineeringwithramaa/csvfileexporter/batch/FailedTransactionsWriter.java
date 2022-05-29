@@ -20,7 +20,7 @@ public class FailedTransactionsWriter extends FlatFileItemWriter<ElectronicCardT
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String stringDate = sdf.format(new Date());
 
-        setResource(new FileSystemResource("fail/"+stringDate+".csv"));
+        setResource(new FileSystemResource("fail/failed-transactions-csv-export"+stringDate+".csv"));
         setLineAggregator(getDelimitedLineAggregator());
         setHeaderCallback(new FlatFileHeaderCallback() {
             @Override

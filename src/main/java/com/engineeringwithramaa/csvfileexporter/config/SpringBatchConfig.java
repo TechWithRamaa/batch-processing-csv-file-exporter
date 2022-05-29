@@ -43,7 +43,7 @@ public class SpringBatchConfig {
     }
     @Bean
     public Step transactionsfailedStep() {
-        return  stepBuilderFactory.get("Failed Transactions step")
+        return  stepBuilderFactory.get("Flow Decider - Failed Transactions step")
                 .<ElectronicCardTransactions, ElectronicCardTransactions> chunk(1000)
                 .reader(electronicCardTransactionsReader)
                 .writer(failedTransactionsWriter)

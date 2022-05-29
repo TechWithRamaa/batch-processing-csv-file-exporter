@@ -23,7 +23,7 @@ public class ElectronicCardTransactionsWriter extends FlatFileItemWriter<Electro
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String stringDate = sdf.format(new Date());
 
-        setResource(new FileSystemResource("data/"+stringDate+".csv"));
+        setResource(new FileSystemResource("data/csv-export-"+stringDate+".csv"));
         setLineAggregator(getDelimitedLineAggregator());
         setHeaderCallback(new FlatFileHeaderCallback() {
             @Override
