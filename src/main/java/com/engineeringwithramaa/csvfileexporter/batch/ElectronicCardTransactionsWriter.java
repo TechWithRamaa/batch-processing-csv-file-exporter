@@ -28,7 +28,8 @@ public class ElectronicCardTransactionsWriter extends FlatFileItemWriter<Electro
         setHeaderCallback(new FlatFileHeaderCallback() {
             @Override
             public void writeHeader(Writer writer) throws IOException {
-                writer.write("transactionId, reference, period, transactionStatus, units, magnitude, subject, transactionGroup, seriesTitle1, seriesTitle2");
+                writer.write("transactionId, reference, period, transactionStatus, units," +
+                                " magnitude, subject, transactionGroup, seriesTitle1, seriesTitle2");
             }
         });
         setFooterCallback(new FlatFileFooterCallback() {

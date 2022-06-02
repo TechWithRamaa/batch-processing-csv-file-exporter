@@ -8,6 +8,5 @@ import java.util.List;
 
 public interface ElectronicCardTransactionsDAO extends JpaRepository<ElectronicCardTransactions, Integer> {
     @Query(value = "SELECT * FROM `card_transactions` WHERE transaction_status = \"TRANSACTION FAILED\";", nativeQuery = true)
-
      List<ElectronicCardTransactions> findbyTransactionStatus();
 }

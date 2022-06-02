@@ -25,10 +25,10 @@ public class ElectronicCardTransactionsScheduler {
 
     @Scheduled(initialDelay = 1000 * 30, fixedDelay=Long.MAX_VALUE)
     public void scheduleByFixedRate() throws Exception {
-        System.out.println("Batch job starting");
+        System.out.println("************    Batch job starting    *************");
         JobParameters jobParameters = new JobParametersBuilder()
                 .addString("time", format.format(Calendar.getInstance().getTime())).toJobParameters();
         jobLauncher.run(job, jobParameters);
-        System.out.println("Batch job executed successfully\n");
+        System.out.println("***************    Batch job executed successfully    ***********\n");
     }
 }
